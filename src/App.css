@@ -1,0 +1,59 @@
+.calculator {
+  border: 2px solid #476b55;
+  padding: 5px;
+  background: black;
+  width: 320px;
+  position: relative;
+}
+.formulaScreen {
+  min-height: 20px;
+  font-family: digital;
+  font-size: 20px;
+  color: orange;
+  text-align: right;
+  vertical-align: text-top;
+  line-height: 20px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+.formulaScreen {
+  height: 10px;
+  font-size: 10px;
+  color: greenyellow;
+  text-align: right;
+  vertical-align: text-top;
+font-family: digital;
+}
+
+.outputScreen {
+  height: 40px;
+  color: white;
+  text-align: right;
+  vertical-align: text-top;
+  font-family: digital;
+}
+.nine-digits {
+  flex-wrap: wrap;
+  display: flex;
+}
+.digit {
+  width: 80px;
+  height: 65px;
+}
+.digit.clear {
+  background: rgb(162, 59, 59);
+  width: 160px;
+}
+.digit.zero {
+  width: 160px;
+}
+.digit.divide, .digit.multiply, .digit.add, .digit.subtract {
+  background: rgb(102, 102, 102);
+}
+.equals {
+  background: rgb(95, 158, 2);
+  height: 130px;
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+}
