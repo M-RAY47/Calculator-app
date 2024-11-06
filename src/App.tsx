@@ -5,6 +5,9 @@ import { digitNumber, operatorsSigns } from './types'
 function App() {
   const [formula, setFormula] = useState('')
   const [displayNumber, setDisplayNumber] = useState('')
+  const isOperator = (symbol: string) => {
+    return /[*/+-]/.test(symbol)
+  }
   const tenDigits: digitNumber[] = [
     {
       id: 'clear',
@@ -99,15 +102,24 @@ function App() {
     if(digit === 'AC') {
       setDisplayNumber('0')
       setFormula('')
-    } else if(digit === '='){
-      const newFormula = parseFloat(digit) 
-      const result = displayNumber + '' + digit
+    } else if(digit === 'negative'){
+      if(formula === '') return
+      setFormula(formula.toString().charAt(0) === '-' ? formula.slice(1) : '-' + formula )
+      // const newFormula = parseFloat(digit) 
+      // const result = displayNumber + '' + digit
 
     } else if(typeof digit === 'number' && displayNumber) {
       const newNum =  displayNumber + '' + digit
       setDisplayNumber(newNum)
-    } else if(digit === 'AC') {
+    } else if(isOperator(digit)) {
+      console.log('')
+    } else if(digit === '='){
+      calculateNum()
     }else setDisplayNumber(digit)
+  }
+
+  const calculateNum = () => {
+
   }
 
   return (
